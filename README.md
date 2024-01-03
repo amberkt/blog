@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Notes
 
-Things you may want to cover:
+Config/Routes
 
-* Ruby version
+`root 'application#hello'`
+This will be sent to the application controller, the hello action/method
 
-* System dependencies
+`root 'pages#home'`
+This expects a home.html.erb template under the pages folder in views. The `def home` method/action will then look for home.html.erb under layouts/pages
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Generating new controllers
+`rails generate controller pages`
