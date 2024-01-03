@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+p {
+  color: red;
+  width: 300px;
+  border: 1px solid black;
+}
+
+/* These are the rules for all p elements. To select multiple elements you can list them between commas::after
+
+p,
+li,
+h1 {
+  color: red;
+} */

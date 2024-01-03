@@ -42,3 +42,36 @@ Within this app/views/pages folder, create a new file called home.html.erb and a
 Hello World!
 
 Once you save this file and preview it from the browser, it should still say Hello World! as expected.
+
+## Setting up SSH Key
+
+To display your public SSH key:
+
+`cat ~/.ssh/id_rsa.pub`
+
+If you don't have an SSH public key or are not sure, checkout the instructions here: https://help.github.com/en/github/authenticating-to-github/checking-for-existing-ssh-keys
+
+When creating a GitHub repo for your application, you can click on the SSH button, then push existing repo:
+
+`git remote add origin git@github.com:yourgithubaccountname/<your-app-name>.git`
+
+`git push -u origin master` # Remember you only need to use this command the first time
+
+To view remotes setup in your environment (from your app directory):
+
+`git remote -v`
+
+For future pushes to repository:
+
+`git push origin master`
+
+## CSS Notes
+
+|                       Selector name                        |                                               What does it select                                                |     Example     |
+| :--------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :-------------: |
+| Element selector (sometimes called a tag or type selector) |                                     All HTML elements of the specified type.                                     | p selects `<p>` |
+|                        ID selector                         |       The element on the page with the specified ID. On a given HTML page, each id value should be unique.       |     #my-id      |
+|          selects <p id="my-id"> or <a id="my-id">          |
+|                       Class selector                       | The element(s) on the page with the specified class. Multiple instances of the same class can appear on a page.  |       283       |
+|                     Attribute selector                     |                             The element(s) on the page with the specified attribute.                             |       283       |
+|                   Pseudo-class selector                    | The specified element(s), but only when in the specified state. (For example, when a cursor hovers over a link.) |       283       |
