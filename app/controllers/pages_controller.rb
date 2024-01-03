@@ -4,4 +4,4 @@ class PagesController < ApplicationController
     end
 end
 
-#Router -> controller -> view
+#In this case, information goes Router -> controller -> view

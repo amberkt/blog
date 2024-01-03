@@ -1,5 +1,9 @@
 # README
 
+## Create new application, first view, and first controller
+
+Created new blog application using `rails new blog; cd blog`
+
 In order to preview the application, you will need to start the rails server. You can start the server by navigating to the terminal and typing in the following command from your application directory followed by enter/return:
 
 `rails server`
