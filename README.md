@@ -74,3 +74,19 @@ For future pushes to repository:
 |                       Class selector                       | The element(s) on the page with the specified class. Multiple instances of the same class can appear on a page.  |        .my-class selects `<p class="my-class"`> and `<a class="my-class"`>        |
 |                     Attribute selector                     |                             The element(s) on the page with the specified attribute.                             |            img[src] selects `<img src="myimage.png">` but not `<img>`             |
 |                   Pseudo-class selector                    | The specified element(s), but only when in the specified state. (For example, when a cursor hovers over a link.) | a:hover selects `<a>`, but only when the mouse pointer is hovering over the link. |
+
+## Layout
+
+CSS layout is mostly based on the box model. Each box taking up space on your page has properties like:
+
+- `padding`, the space around the content. In the example below, it is the space around the paragraph text.
+- `border`, the solid line that is just outside the padding.
+- `margin`, the space around the outside of the border.
+
+In this section we also use:
+
+- `width` (of an element).
+- `background-color`, the color behind an element's content and padding.
+- `color`, the color of an element's content (usually text).
+- `text-shadow` sets a drop shadow on the text inside an element.
+- `display` sets the display mode of an element. (keep reading to learn more)

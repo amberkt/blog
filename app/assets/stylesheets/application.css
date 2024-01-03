@@ -20,10 +20,39 @@ p {
   border: 1px solid black;
 }
 
-/* These are the rules for all p elements. To select multiple elements you can list them between commas::after
+html {
+  background-color: #00539f;
+}
 
-p,
-li,
+body {
+  width: 600px;
+  /* This forces the body to always be 600 px wide */
+  margin: 0 auto;
+  /* When you set two values on a property like margin or padding, the first value affects the element's top and bottom side (setting it to 0 in this case); the second value affects the left and right side. 
+  (Here, auto is a special value that divides the available horizontal space evenly between left and right). You can also use one, two, three, or four values */
+  background-color: #ff9500;
+  /* This sets the element's background color. This project uses a reddish orange for the body background color, as opposed to dark blue for the <html> element. */
+  padding: 0 20px 20px 20px;
+  /* This sets four values for padding. The goal is to put some space around the content. In this example, there is no padding on the top of the body, and 20 pixels on the right, bottom and left. The values set top, right, bottom, left, in that order. As with margin, you can use one, two, three, or four values */
+  border: 5px solid black;
+  /* This sets values for the width, style and color of the border. In this case, it's a five-pixel–wide, solid black border, on all sides of the body. */
+}
+
 h1 {
-  color: red;
-} */
+  margin: 0;
+  padding: 20px 0;
+  color: #00539f;
+  text-shadow: 3px 3px 1px black;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* text-shadow applies a shadow to the text content of the element. Its four values are:
+
+The first pixel value sets the horizontal offset of the shadow from the text: how far it moves across.
+The second pixel value sets the vertical offset of the shadow from the text: how far it moves down.
+The third pixel value sets the blur radius of the shadow. A larger value produces a more fuzzy-looking shadow.
+The fourth value sets the base color of the shadow. */
