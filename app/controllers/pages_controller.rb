@@ -3,3 +3,5 @@ class PagesController < ApplicationController
         #this will look for home.html.erb
     end
 end
+
+#Router -> controller -> view
