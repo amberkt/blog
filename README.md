@@ -171,3 +171,7 @@ A resource includes a model, controller, a table, and views.
 This invoked active record, and created a migration file. It created a model, some tests, and routes. It generates a controller and views. This created an article resource with a string title and a text description.
 
 Need to run `rails db:migrate` to actually migrate the migration file.
+
+## Routes
+
+`rails routes` to see all routes in application, or `rails routes --expanded`
