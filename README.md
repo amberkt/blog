@@ -161,3 +161,13 @@ replace `newnameofyourapp` above with the name you'd like to give your app
 Your app will then be accessible from the following browser URL ->
 
 https://newnameofyourapp.herokuapp.com
+
+## Resources
+
+A resource includes a model, controller, a table, and views.
+
+`rails generate scaffold Article title:string description:text`
+
+This invoked active record, and created a migration file. It created a model, some tests, and routes. It generates a controller and views. This created an article resource with a string title and a text description.
+
+Need to run `rails db:migrate` to actually migrate the migration file.
