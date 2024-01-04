@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     end
 
     def about
-        
+         #this will look for about.html.erb
     end
 end
 
