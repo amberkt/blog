@@ -203,3 +203,32 @@ end
 Save the file, and run `rails db:migrate` which will run the latest migration file.
 
 By the way, when using the scaffold generator, Rails adds timestamps to tables when they are created. They include two columns: `created_at` and `updated_at`. These special columns are automatically managed by Active Record if they exist.
+
+## Models
+
+They inherit from ApplicationRecord:
+
+```
+class Article < ApplicationRecord
+end
+```
+
+## Rails Console
+
+Can be accessed by `rails c` and you can get all articles with `Article.all`
+Create another article: `Article.create(title: "another article", description: "this is a description of another article")`
+Rails will take care of `created_at` and `updated_at`
+
+It's preferred to use variables in the console.
+
+`article4 = Article.new`
+That creates an article with `nil` for title and description, and you can set and access the properties of article with `article4.title = something` and `article4.description = something`
+
+This is not yet saved to the db! You need to run `article4.save`
+
+In all one line:
+
+```
+article = Article.new(title: "another article", description: "this is a description of another article")
+article.save
+```
