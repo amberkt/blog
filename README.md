@@ -213,6 +213,13 @@ class Article < ApplicationRecord
 end
 ```
 
+### Validations
+
+    ```validates :title, presence: true #require title to be present to be saved to db
+    validates :descriptions, presence: true```
+
+Requires title and description to not be blank before saving to db. To view any errors while saving an object, you can run `article.errors` or `articles.errors.full_messages`
+
 ## Rails Console
 
 Can be accessed by `rails c` and you can get all articles with `Article.all`
@@ -231,4 +238,16 @@ In all one line:
 ```
 article = Article.new(title: "another article", description: "this is a description of another article")
 article.save
+```
+
+Finding a specific article by id, with id of 2: `Article.find(2)`
+Finding the first article: `first_article = Article.first`
+Last: `last_article = Article.last`
+
+`reload!` reloads the console to reflect updated changes in the model file.
+
+### Deleting an Article
+
+```
+article.destroy
 ```
