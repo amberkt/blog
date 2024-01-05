@@ -165,6 +165,10 @@ https://newnameofyourapp.herokuapp.com
 ## Resources
 
 A resource includes a model, controller, a table, and views.
+The model name is singular: "article."
+The model file name will be `article.rb`
+The article model class name will be "Article"
+Rails will expect a corresponding table: "articles"
 
 `rails generate scaffold Article title:string description:text`
 
