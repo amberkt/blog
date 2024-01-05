@@ -179,3 +179,27 @@ Need to run `rails db:migrate` to actually migrate the migration file.
 ## Routes
 
 `rails routes` to see all routes in application, or `rails routes --expanded`
+
+## Migrations
+
+To create a migration file: `rails generate migration create_articles`
+
+Rails will only run migration files that haven't been run already.
+
+Run migration file: `rails db:migrate`
+Rollback the last migration file: `rails db:rollback`
+
+Say you want to add a column to a table, you can't just go into the migration file and add the column and run the migration again. You should create a new migration file, this will be important in teams when you're working with multiple people. Say you want to add timestamps to a table:
+
+```
+class AddTimestampsToArticles < ActiveRecord::Migration[6.0]
+  def change
+    add_column :articles, :created_at, :datetime
+    add_column :articles, :updated_at, :datetime
+  end
+end
+```
+
+Save the file, and run `rails db:migrate` which will run the latest migration file.
+
+By the way, when using the scaffold generator, Rails adds timestamps to tables when they are created. They include two columns: `created_at` and `updated_at`. These special columns are automatically managed by Active Record if they exist.
