@@ -12,6 +12,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  #Remember that an instance variable will be available and passed down to the view
+
   # GET /articles/new
   def new
     @article = Article.new
