@@ -216,7 +216,7 @@ end
 ### Validations
 
     ```validates :title, presence: true #require title to be present to be saved to db
-    validates :descriptions, presence: true```
+    validates :description, presence: true```
 
 Requires title and description to not be blank before saving to db. To view any errors while saving an object, you can run `article.errors` or `articles.errors.full_messages`
 

@@ -14,22 +14,33 @@ class ArticlesController < ApplicationController
 
   #Remember that an instance variable will be available and passed down to the view
 
-  # GET /articles/new
   def new
     @article = Article.new
   end
 
-  # GET /articles/1/edit
   def edit
   end
 
   # POST /articles or /articles.json
+
+  #From the course
+  # def create
+  #   @article = Article.new(params.require(:article).permit(:title, :description))
+  #   if @article.save
+  #     redirect_to @article
+  #   else 
+  #     render 'new'
+  # end
+
+
+  #from scaffold
   def create
     @article = Article.new(article_params)
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to article_url(@article), notice: "Article was successfully created." }
+        flash[:notice] = "Article was created successfully, flash notice"
+        format.html { redirect_to article_url(@article), notice: "Article was successfully created, scaffold." }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -67,7 +78,7 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Only allow a list of trusted parameters through. Need to whitelist the keys you want to permit.
     def article_params
       params.require(:article).permit(:title, :description)
     end
