@@ -13,6 +13,9 @@
         <td><%= article.title %></td>
         <td><%= article.description %></td>
         <td>
+          <%= link_to 'Delete directly from here', article_path(article), method: :delete %>
+        </td>
+        <td>
           <%= link_to "Show this article", article %>
         </td>
       </tr>

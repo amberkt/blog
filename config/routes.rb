@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 end
 
 
-  #This gives all the routes for articles, comes with scaffold but you'll need to manually add this here if you didn't use the scaffold
-  #can use :only to limit actions that are permitted to the resource
+  #This gives all the restful routes for articles, comes with scaffold
+  #can use :only to limit actions that are permitted to the resource: 
+    #only: [:show, :index, :new, :create, :edit, :update, :destroy]

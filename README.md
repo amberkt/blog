@@ -206,6 +206,8 @@ If the application works without explicitly fetching the article in the edit act
 
 `rails routes` to see all routes in application, or `rails routes --expanded`
 
+REST - Representational state transfer - mappint HTTP verbs (get, post, put/patch, delete) to CRUD actions
+
 ## Migrations
 
 To create a migration file: `rails generate migration create_articles`
