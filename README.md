@@ -162,6 +162,9 @@ Your app will then be accessible from the following browser URL ->
 
 https://newnameofyourapp.herokuapp.com
 
+See this as well for deploying this app to heroku:
+https://webpt.udemy.com/course/the-complete-ruby-on-rails-developer-course/learn/lecture/18571294#overview
+
 ## Resources
 
 A resource includes a model, controller, a table, and views.

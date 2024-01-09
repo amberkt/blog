@@ -2,7 +2,6 @@
   <% if article.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
       <ul>
         <% article.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,21 +9,16 @@
       </ul>
     </div>
   <% end %>
-
   <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
-
   <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
-
   <div>
     <%= form.submit %>
   </div>
 <% end %>
-
-
-<%# This is using a form helper called form_with %>
+<%# This is using a form helper called form_with and this is a partial %>
