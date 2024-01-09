@@ -174,7 +174,33 @@ Rails will expect a corresponding table: "articles"
 
 This invoked active record, and created a migration file. It created a model, some tests, and routes. It generates a controller and views. This created an article resource with a string title and a text description.
 
-Need to run `rails db:migrate` to actually migrate the migration file.
+When you use the scaffold generator in Ruby on Rails, it automatically generates a set of default actions for your controller, including the edit action. In the case of the edit action, the generator assumes that you will find the record to edit based on the id parameter in the URL.
+
+Here's how it works:
+
+In the config/routes.rb file, there's a route defined for the edit action, something like:
+
+`resources :articles`
+
+This line generates routes for all standard CRUD actions, including edit.
+
+When you visit the URL for editing an article (e.g., /articles/1/edit), the Rails framework automatically calls the edit action in your controller.
+
+Since the id parameter is present in the URL (params[:id]), Rails implicitly assumes that you want to find the corresponding record for that id.
+
+The scaffold generator adds some default behavior behind the scenes. It assumes that the record will be found using the find method based on the id parameter.
+
+```
+def edit
+  @article = Article.find(params[:id])
+end
+```
+
+However, Rails is designed to be flexible, and it makes certain assumptions to save you from writing boilerplate code. If your scaffold-generated edit method doesn't explicitly include the @article = Article.find(params[:id]) line, it's because Rails is using its conventions to perform this operation implicitly.
+
+This behavior works because the edit view typically forms a form for editing an existing record. Rails knows that for editing, it needs to retrieve the record based on the id parameter.
+
+If the application works without explicitly fetching the article in the edit action, it suggests that Rails is able to infer the record based on the standard conventions and assumptions. However, keep in mind that explicit code can be added to the edit action if you need to customize or perform additional actions related to record retrieval.
 
 ## Routes
 
@@ -186,7 +212,8 @@ To create a migration file: `rails generate migration create_articles`
 
 Rails will only run migration files that haven't been run already.
 
-Run migration file: `rails db:migrate`
+Need to run `rails db:migrate` to actually migrate the migration file.
+
 Rollback the last migration file: `rails db:rollback`
 
 Say you want to add a column to a table, you can't just go into the migration file and add the column and run the migration again. You should create a new migration file, this will be important in teams when you're working with multiple people. Say you want to add timestamps to a table:

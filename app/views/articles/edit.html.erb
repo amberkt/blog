@@ -1,10 +1,9 @@
 <h1>Editing article</h1>
-
 <%= render "form", article: @article %>
-
 <br>
-
 <div>
   <%= link_to "Show this article", @article %> |
   <%= link_to "Back to articles", articles_path %>
 </div>
+<%# The course teaches that in order to get the edit form to populate the title and description from the first time the article was saved, you can do this:  %>
+<% #form_with(model: @article, local: true) do |f| %>

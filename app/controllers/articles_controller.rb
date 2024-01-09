@@ -9,7 +9,9 @@ class ArticlesController < ApplicationController
   # GET /articles/1 or /articles/1.json
   def show
     #debugger
-    @article = Article.find(params[:id])
+    #Need to find the article first, from the params
+    # @article = Article.find(params[:id])
+    set_article
   end
 
   #Remember that an instance variable will be available and passed down to the view
@@ -19,6 +21,10 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    #Need to find the article first, from the params, to edit the article. This is from the course.
+    #debugger
+    set_article
+    # @article = Article.find(params[:id])
   end
 
   # POST /articles or /articles.json
@@ -51,6 +57,7 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
+    set_article #I added this, why doesn't the scaffold generator add this? Rails magic, see readme
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to article_url(@article), notice: "Article was successfully updated." }
@@ -61,6 +68,8 @@ class ArticlesController < ApplicationController
       end
     end
   end
+
+  #to see the course code for update and edit as opposed to this generator code, see https://github.com/udemyrailscourse/alpha-blog-6/commit/a7b9797b08dbc7fc5272f459b3659b9df289e354
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
