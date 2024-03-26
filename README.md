@@ -283,3 +283,5 @@ Last: `last_article = Article.last`
 ```
 article.destroy
 ```
+
+Users can create articles, and they'll be associated via a user_id on the articles table (foreign key). One to many.
