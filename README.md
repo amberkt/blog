@@ -285,3 +285,27 @@ article.destroy
 ```
 
 Users can create articles, and they'll be associated via a user_id on the articles table (foreign key). One to many.
+
+Generate user resource:
+
+```
+rails generate scaffold User username:string
+```
+
+Run `rails db:migrate`
+
+Adding user_id to the articles table:
+
+```
+rails generate migration add_user_id_to_articles
+```
+
+Run `rails db:migrate` after adding the appropriate column to the table.
+
+```
+class AddUserIdToArticles < ActiveRecord::Migration[7.1]
+  def change
+    add_column :articles, :user_id, :int
+  end
+end
+```
