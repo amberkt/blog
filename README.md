@@ -247,10 +247,16 @@ end
 
 ### Validations
 
-    ```validates :title, presence: true #require title to be present to be saved to db
-    validates :description, presence: true```
+```
+validates :title, presence: true
+validates :description, presence: true
+```
 
 Requires title and description to not be blank before saving to db. To view any errors while saving an object, you can run `article.errors` or `articles.errors.full_messages`
+
+Can check the validity of something before saving to database with `.valid?`
+
+Can go to https://rubular.com/ to play with regex expressions.
 
 ## Rails Console
 
