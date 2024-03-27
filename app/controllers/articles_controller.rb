@@ -35,11 +35,16 @@ class ArticlesController < ApplicationController
   #from scaffold
   def create
     @article = Article.new(article_params)
+    @article.user = User.first 
+    
+    
+    #Until we add authentication, I'm hardcoding in a user for each article that's created.
+    #At the same time that I did this, I ran Article.update_all(user_id: User.first.id) to backfill each article with a user
 
     respond_to do |format|
       if @article.save
-        flash[:notice] = "Article was created successfully, flash notice"
-        format.html { redirect_to article_url(@article), notice: "Article was successfully created, scaffold." }
+        flash[:notice] = "Article was created successfully, notification from flash notice"
+        format.html { redirect_to article_url(@article), notice: "Article was created successfully, notification from scaffold" }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new, status: :unprocessable_entity }

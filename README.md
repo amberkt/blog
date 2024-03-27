@@ -245,6 +245,10 @@ class Article < ApplicationRecord
 end
 ```
 
+### Associations in Models
+
+Two things must be done. Create the associations in the model (belongs_to and has_many, or others if applicable) and must add the foreign key to the table who has a belongs_to relationship to the other resource (can do this in a migration, see [Add user id to articles](db/migrate/20240326222544_add_user_id_to_articles.rb))
+
 ### Validations
 
 ```
@@ -257,6 +261,10 @@ Requires title and description to not be blank before saving to db. To view any 
 Can check the validity of something before saving to database with `.valid?`
 
 Can go to https://rubular.com/ to play with regex expressions.
+
+The ruby regular expression used to match the format of valid email addresses is listed below.
+
+`/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i`
 
 ## Rails Console
 
